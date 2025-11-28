@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayMe</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: 'Elms Sans', sans-serif;
+        }
+
+        .font-elms {
+            font-family: 'Elms Sans', sans-serif;
+        }
+
+        .marquee-inner {
+            animation: marqueeScroll 15s linear infinite;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center h-[70px] w-full px-6 md:px-16 lg:px-24 xl:px-32 relative">
+        <div class="flex items-center gap-10">
+            <a href="#" class="text-[#25a4ad] font-semibold text-lg">Payme</a>
+            <ul class="hidden md:flex items-center gap-8 text-gray-700 font-elms text-sm">
+                <li><a href="#home" class="hover:text-[#25a4ad] transition">Home</a></li>
+                <li><a href="#Features" class="hover:text-[#25a4ad] transition">About</a></li>
+                <li><a href="#testimonials" class="hover:text-[#25a4ad] transition">Testimonials</a></li>
+                <li><a href="#footer" class="hover:text-[#25a4ad] transition">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="hidden md:flex items-center gap-4 font-elms">
+            <a href="#" class="text-gray-700 text-sm hover:text-[#25a4ad] transition">Sign in</a>
+            <a href="#"
+                class="border border-[#25a4ad] text-[#25a4ad] hover:bg-[#25a4ad] hover:text-white transition-all px-5 py-2 text-sm">
+                Sign up
+            </a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden" aria-label="menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#25a4ad" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="#25a4ad" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div id="mobile-menu"
+            class="hidden absolute top-[70px] left-0 w-full bg-white border-t border-gray-100 shadow-md md:hidden z-50">
+            <ul class="flex flex-col items-left px-8 gap-6 py-6 font-elms text-gray-700 text-sm">
+                <li><a href="#home" class="hover:text-[#25a4ad] transition">Home</a></li>
+                <li><a href="#Features" class="hover:text-[#25a4ad] transition">About</a></li>
+                <li><a href="#testimonials" class="hover:text-[#25a4ad] transition">Testimonials</a></li>
+                <li><a href="#footer" class="hover:text-[#25a4ad] transition">Contact</a></li>
+                <li><a href="#" class="text-gray-700 text-sm hover:text-[#25a4ad] transition">Sign in</a></li>
+                <li>
+                    <a href="#"
+                        class="border border-[#25a4ad] text-[#25a4ad] hover:bg-[#25a4ad] hover:text-white transition-all px-5 py-2 rounded-md text-sm">
+                        Sign up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative w-full px-6 md:px-16 lg:px-24 xl:px-32 mt-20 
+           flex flex-col-reverse md:flex-row items-center justify-between 
+           font-elms overflow-hidden">
+
+        <!-- Left Content -->
+        <div class="flex-1 text-left z-10 mt-10 md:mt-0">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-thin leading-tight text-gray-800">
+                Providing <br />
+                <span class="block mt-2">Best</span>
+                <span class="text-[#25a4ad] font-semibold mt-4 block">WEB Services</span>
+            </h1>
+
+            <p class="mt-4 sm:mt-6 max-w-lg text-sm sm:text-base leading-relaxed">
+                Letter of on become he tended active enable to. Vicinity relation sensible sociable surprise screened no
+                up as.
+            </p>
+
+            <div class="flex gap-3 sm:gap-4 mt-6 sm:mt-8 flex-wrap">
+                <button
+                    class="bg-[#25a4ad] text-white px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#1f8e97] shadow-md transition-all">
+                    Get Started
+                </button>
+                <button
+                    class="border border-[#25a4ad] text-[#25a4ad] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm md:text-base font-medium hover:bg-[#25a4ad] hover:text-white transition-all">
+                    Explore
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side Image + Background Shape -->
+        <div class="flex-1 flex justify-center md:justify-end relative 
+                mt-10 md:mt-0 w-full">
+
+            <!-- Background Shape -->
+            <div class="absolute md:top-[250px] md:right-[-90px]
+                   top-0 left-1/2 -translate-x-1/2 md:translate-x-0
+                   md:left-auto md:right-[-90px]
+                   w-[260px] sm:w-[380px] md:w-[460px] lg:w-[550px]
+                   h-[420px] sm:h-[600px] md:h-[700px] lg:h-[800px]">
+
+                <div class="absolute inset-0 bg-[#e7fafa] 
+    border-[4px] sm:border-[5px] md:border-[6px] border-[#25a4ad]
+
+    rounded-[200px] sm:rounded-[300px] md:rounded-[350px] mt-20
+
+   
+    [clip-path:ellipse(70%_40%_at_50%_40%)]
+
+    
+    sm:[clip-path:none]">
+                </div>
+            </div>
+
+            <!-- Profile Image -->
+            <img src="./images/Moiz.png" alt="Profile" class="relative z-10
+                   w-[180px] sm:w-[260px] md:w-[350px] lg:w-[420px]
+                   translate-x-0 md:translate-x-10
+                   mt-10 md:mt-0" />
+        </div>
+
+    </section>
+
+
+
+    <!-- Brand Logos -->
+    <div class="overflow-hidden w-full relative max-w-5xl mx-auto  select-none">
+        <div
+            class="absolute left-0 top-[-50] h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent">
+        </div>
+
+        <!-- The marquee container -->
+        <div id="logo-track" class="marquee-inner flex items-center will-change-transform min-w-[200%]"></div>
+
+        <div
+            class="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent">
+        </div>
+    </div>
+
+    <!-- Logo template -->
+    <template id="logo-template">
+        <img class="w-20 h-20 object-contain mx-6 opacity-80 hover:opacity-100 transition-all" draggable="false" />
+    </template>
+
+
+    <!-- services section -->
+    <section class="py-16 bg-white text-center">
+        <h2 class="text-3xl md:text-4xl font-light mb-3">
+            Best <span class="text-[#25a4ad] font-semibold">Services</span>
+        </h2>
+        <p class="max-w-xl py-6 mx-auto text-gray-500 text-sm md:text-base mb-12">
+            Letter of on become he tended active enable to. Vicinity relation sensible sociable surprise screened no up
+            as.
+        </p>
+
+        <div class="grid grid-cols-2 gap-1 p-5 max-w-3xl mx-auto">
+            
+            <div class="-mt-10 space-y-6 ">
+
+                <!-- Web Development -->
+                <div
+                    class="relative w-[160px] md:w-[360px] h-[150px] md:h-[320px] rounded-tl-[60px] md:rounded-tl-[120px] overflow-hidden mx-auto">
+                    <img src="images/web-development.jpg" alt="Web Development" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white font-semibold">
+                        <p class="text-sm md:text-lg">Web Development</p>
+                        <p class="text-yellow-400 text-xs md:text-sm mt-1">★★★★★</p>
+                    </div>
+                </div>
+
+                <!-- Database Management -->
+                <div
+                    class="relative w-[160px] md:w-[360px] h-[150px] md:h-[320px] rounded-bl-[60px] md:rounded-bl-[120px] overflow-hidden mx-auto">
+                    <img src="images/database.jpg" alt="Database Management" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white font-semibold">
+                        <p class="text-sm md:text-lg">Database Management</p>
+                        <p class="text-yellow-400 text-xs md:text-sm mt-1">★★★★★</p>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="space-y-6">
+
+                <!-- Web Designing -->
+                <div
+                    class="relative w-[160px] md:w-[360px] h-[150px] md:h-[320px] rounded-tr-[60px] md:rounded-tr-[120px] overflow-hidden mx-auto">
+                    <img src="images/web-designing.png" alt="Web Designing" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white font-semibold">
+                        <p class="text-sm md:text-lg">Web Designing</p>
+                        <p class="text-yellow-400 text-xs md:text-sm mt-1">★★★★★</p>
+                    </div>
+                </div>
+
+                <!-- SEO -->
+                <div
+                    class="relative w-[160px] md:w-[360px] h-[150px] md:h-[320px] rounded-br-[60px] md:rounded-br-[120px] overflow-hidden mx-auto">
+                    <img src="images/SEO.jpg" alt="SEO" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white font-semibold">
+                        <p class="text-sm md:text-lg">SEO</p>
+                        <p class="text-yellow-400 text-xs md:text-sm mt-1">★★★★★</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <button
+                class="border border-[#25a4ad] text-[#25a4ad] px-6 py-2  hover:bg-[#25a4ad] hover:text-white transition-all duration-300">
+                Explore All
+            </button>
+        </div>
+    </section>
+
+    <!-- Our Features Section -->
+    <section id="Features" class="py-20 text-center font-elms bg-white overflow-hidden relative">
+        <h2 class="text-3xl md:text-4xl font-light text-gray-800">
+            Our <span class="text-[#25a4ad] font-semibold">Features</span>
+        </h2>
+
+        <p class="max-w-xl mx-auto mt-4 text-sm md:text-base text-gray-600">
+            Letter of on become he tended active enable to. Vicinity relation sensible sociable
+            surprise screened no up as.
+        </p>
+
+        <!-- Carousel Wrapper -->
+        <div class="relative mt-14">
+            <!-- Left Button -->
+            <button id="prevBtn"
+                class="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-md hover:bg-[#25a4ad] hover:text-white text-gray-700 p-3 rounded-full z-20 transition">
+                &#10094;
+            </button>
+
+            <!-- Scroll Container -->
+            <div id="carousel"
+                class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth gap-6 px-8 md:px-16">
+
+                <!-- Feature 1 (White Card) -->
+                <div
+                    class="flex-shrink-0 w-[280px] md:w-[300px] bg-white shadow-md hover:shadow-lg transition-all border border-gray-100 rounded-md p-8 text-left snap-center">
+                    <h3 class="text-[#25a4ad] font-semibold mb-3">Work Load</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Outward clothes promise at gravity do excited. Sufficient particular impossible by reasonable oh
+                        expression. Yet preference connection unpleasant yet melancholy but end appearance. And
+                        excellence partiality estimating terminated day everything.
+                    </p>
+                    <a href="#" class="block mt-4 text-[#25a4ad] text-sm font-medium hover:underline">Learn More</a>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="flex-shrink-0 w-[280px] md:w-[300px] bg-[#f8f8f8] shadow-md hover:shadow-lg transition-all border border-gray-100 rounded-md p-8 text-left snap-center">
+                    <h3 class="text-gray-800 font-semibold mb-3">Time Tracking</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Accurate time tracking keeps your productivity transparent and measurable. Visualize progress,
+                        control output, and manage your team more effectively.
+                    </p>
+                    <a href="#" class="block mt-4 text-[#25a4ad] text-sm font-medium hover:underline">Learn More</a>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="flex-shrink-0 w-[280px] md:w-[300px] bg-[#f8f8f8] shadow-md hover:shadow-lg transition-all border border-gray-100 rounded-md p-8 text-left snap-center">
+                    <h3 class="text-gray-800 font-semibold mb-3">Collaborations</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Boost teamwork with real-time collaboration tools that keep your projects aligned and
+                        communication seamless across departments.
+                    </p>
+                    <a href="#" class="block mt-4 text-[#25a4ad] text-sm font-medium hover:underline">Learn More</a>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="flex-shrink-0 w-[280px] md:w-[300px] bg-[#f8f8f8] shadow-md hover:shadow-lg transition-all border border-gray-100 rounded-md p-8 text-left snap-center">
+                    <h3 class="text-gray-800 font-semibold mb-3">Data Analysis</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Gain deeper insights with automated data analysis and visual reporting, helping you make smarter
+                        business decisions effortlessly.
+                    </p>
+                    <a href="#" class="block mt-4 text-[#25a4ad] text-sm font-medium hover:underline">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Right Button -->
+            <button id="nextBtn"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-md hover:bg-[#25a4ad] hover:text-white text-gray-700 p-3 rounded-full z-20 transition">
+                &#10095;
+            </button>
+        </div>
+
+        <!-- Explore Button -->
+        <div class="mt-16">
+            <button
+                class="border border-[#25a4ad] text-[#25a4ad] px-8 py-3  text-sm md:text-base hover:bg-[#25a4ad] hover:text-white transition-all">
+                Explore All
+            </button>
+        </div>
+
+        <!-- Testimonials -->
+
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto text-center">
+
+                <!-- Heading -->
+                <h2 class="text-4xl font-light text-gray-800 mb-4">
+                    What <span class="font-semibold text-[#25a4ad]">Clients</span> Say
+                </h2>
+                <p class="text-gray-500 max-w-2xl mx-auto mb-12">
+                    Letter of on become he tended active enable to. Vicinity relation sensible sociable
+                    surprise screened no up as.
+                </p>
+
+                <!-- Carousel Wrapper -->
+                <div class="relative overflow-hidden w-full flex justify-center">
+                    <div id="testimonial-container" class="flex transition-transform duration-700 ease-in-out">
+
+                        <!-- SLIDE 1 -->
+                        <div class="w-full flex flex-col md:flex-row items-center justify-center flex-shrink-0 gap-4">
+
+                            <div
+                                class="w-[350px] h-[250px] md:w-[482px] md:h-[472px] flex-shrink-0 overflow-hidden bg-center bg-cover">
+                                <div class="w-full h-full overflow-hidden rounded-tl-[140px] md:rounded-tl-[236px]">
+                                    <img src="images/client1.jpg" class="w-full h-full object-cover" alt="Client 1" />
+                                </div>
+                            </div>
+
+                            <div class="bg-[#F8F8F8] w-[350px] md:w-[668px] h-auto md:h-[472px] p-5 md:p-10 flex flex-col justify-center
+                   overflow-hidden rounded-br-[140px] md:rounded-br-[236px]">
+                                <h3 class="text-base md:text-lg font-semibold text-gray-800 mb-2">Best Developers</h3>
+                                <p class="text-gray-600 mb-3 leading-relaxed text-sm md:text-base">
+                                    Outward clothes promise at gravity do excited. Sufficient particular impossible by
+                                    reasonable expression is. Yet preference connection
+                                </p>
+                                <div class="text-[#fbbf24] mb-2">★★★★★</div>
+                                <p class="text-gray-800 font-medium">Robert Johnson</p>
+                                <p class="text-xs text-gray-500">Director at Behance</p>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="w-full flex flex-col md:flex-row items-center justify-center flex-shrink-0 gap-4">
+
+                            <div class="w-[350px] h-[250px] md:w-[482px] md:h-[472px] overflow-hidden">
+                                <div class="w-full h-full overflow-hidden rounded-tl-[140px] md:rounded-tl-[236px]">
+                                    <img src="images/client2.jpg" class="w-full h-full object-cover" alt="Client 2" />
+                                </div>
+                            </div>
+
+                            <div class="bg-[#F8F8F8] w-[350px] md:w-[668px] h-auto md:h-[472px] p-5 md:p-10 
+                      flex flex-col justify-center overflow-hidden rounded-br-[140px] md:rounded-br-[236px]">
+                                <h3 class="font-semibold mb-2 text-gray-800">Amazing Experience</h3>
+                                <p class="text-gray-600 mb-3">
+                                    The team did an outstanding job. Highly professional, responsive, and creative in
+                                    every step of the project. Highly recommended! Their work speaks volumes for itself.
+                                </p>
+                                <div class="text-[#fbbf24] mb-2">★★★★★</div>
+                                <p class="text-gray-800 font-medium">James Harrison</p>
+                                <p class="text-xs text-gray-500">CEO at Designify</p>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 -->
+                        <div class="w-full flex flex-col md:flex-row items-center justify-center flex-shrink-0 gap-4">
+
+                            <div class="w-[350px] h-[250px] md:w-[482px] md:h-[472px] overflow-hidden">
+                                <div class="w-full h-full overflow-hidden rounded-tl-[140px] md:rounded-tl-[236px]">
+                                    <img src="images/client3.jpg" class="w-full h-full object-cover" alt="Client 3" />
+                                </div>
+                            </div>
+
+                            <div class="bg-[#F8F8F8] w-[350px] md:w-[668px] h-auto md:h-[472px] p-5 md:p-10 
+                      flex flex-col justify-center overflow-hidden rounded-br-[140px] md:rounded-br-[236px]">
+                                <h3 class="font-semibold mb-2 text-gray-800">Highly Recommend</h3>
+                                <p class="text-gray-600 mb-3">
+                                    Working with them was seamless and efficient. Their expertise and creativity brought
+                                    our vision to life beyond expectations. Truly a pleasure to collaborate with this
+                                    team.
+                                </p>
+                                <div class="text-[#fbbf24] mb-2">★★★★★</div>
+                                <p class="text-gray-800 font-medium">Daniel Smith</p>
+                                <p class="text-xs text-gray-500">Founder at TechNova</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-center items-center gap-4 mt-10">
+                    <button id="prev"
+                        class="w-13 h-8 rounded-full border border-[#25a4ad] text-[#25a4ad] hover:bg-[#25a4ad] hover:text-white transition">←</button>
+                    <button id="next"
+                        class="w-13 h-8 rounded-full border border-[#25a4ad] text-[#25a4ad] hover:bg-[#25a4ad] hover:text-white transition">→</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+
+        <section class="py-20 bg-white text-center font-elms">
+            <h2 class="text-4xl font-light text-gray-800 mb-3">
+                Our <span class="text-[#25a4ad] font-semibold">Pricing Plan</span>
+            </h2>
+            <p class="max-w-xl mx-auto text-gray-500 text-sm md:text-base mb-12">
+                Choose the plan that fits your needs. Simple, transparent pricing built for you.
+            </p>
+
+            <div class="flex flex-wrap items-end justify-center gap-8">
+                <!-- For Starter -->
+                <div
+                    class="w-72 bg-white text-center text-gray-800/90 border border-gray-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <p class="font-semibold text-lg mb-2">For Starter</p>
+                        <h1 class="text-4xl font-bold mb-6">$59</h1>
+                        <ul class="list-none text-gray-600 text-sm space-y-2 mb-10">
+                            <li>• Feedback Categorization</li>
+                            <li>• Features Prioritization</li>
+                            <li>• Real-Time Collaboration</li>
+                            <li>• Feedback Loop Notifications</li>
+                            <li>• Essential Dev Tools Integrations</li>
+                        </ul>
+                    </div>
+                    <button type="button"
+                        class="border border-[#25a4ad] text-[#25a4ad] hover:bg-[#25a4ad] hover:text-white transition-all w-full py-2 text-sm font-medium">
+                        Request Demo
+                    </button>
+                </div>
+
+                <!-- For Teams (Highlighted Plan) -->
+                <div
+                    class="w-72 bg-white text-center p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all relative -translate-y-4 hover:-translate-y-8 z-10 duration-300 flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <p class="font-semibold text-lg text-[#25a4ad] mb-2">For Teams</p>
+                        <h1 class="text-4xl font-bold text-[#25a4ad] mb-6">$99</h1>
+                        <ul class="list-none text-[#25a4ad] text-sm space-y-2 mb-10">
+                            <li>• Feedback Categorization</li>
+                            <li>• Features Prioritization</li>
+                            <li>• Real-Time Collaboration</li>
+                            <li>• Feedback Loop Notifications</li>
+                            <li>• Essential Dev Tools Integrations</li>
+                        </ul>
+                    </div>
+                    <button type="button"
+                        class="bg-[#25a4ad] text-white hover:bg-[#1f8e97] transition-all w-full py-2 text-sm font-medium">
+                        Request Demo
+                    </button>
+                </div>
+
+                <!-- For Company -->
+                <div
+                    class="w-72 bg-white text-center text-gray-800/90 border border-gray-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <p class="font-semibold text-lg mb-2">For Company</p>
+                        <h1 class="text-4xl font-bold mb-6">Custom</h1>
+                        <ul class="list-none text-gray-600 text-sm space-y-2 mb-10">
+                            <li>• Feedback Categorization</li>
+                            <li>• Feedback Loop Notifications</li>
+                            <li>• Essential Dev Tools Integrations</li>
+                            <li>• Features Prioritization</li>
+                        </ul>
+                    </div>
+                    <button type="button"
+                        class="border border-[#25a4ad] text-[#25a4ad] hover:bg-[#25a4ad] hover:text-white transition-all w-full py-2 text-sm font-medium">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="py-20 bg-gray-50 font-elms">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-4xl font-semibold text-[#25a4ad] mb-3">FAQs</h2>
+
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4">
+
+                <div x-data="{ open: true }" class="bg-white rounded-xl shadow-md transition-all">
+                    <button @click="open = !open"
+                        class="w-full flex items-start gap-4 p-6 text-left text-gray-800 font-medium text-base">
+
+                        <span class="text-[#25a4ad] text-3xl font-light leading-none" x-text="open ? '–' : '+'"></span>
+
+                        <span class="flex-1">
+                            She met humoured sir breeding her. Six curiosity day assurance bed necessary.
+                        </span>
+                    </button>
+
+                    <div x-show="open" x-collapse class="pl-14 pr-6 pb-6 text-gray-500 text-sm leading-relaxed">
+                        Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil
+                        respect.
+                        Always get adieus nature day course for common. My little garret repair to desire he esteem.
+                    </div>
+                </div>
+
+
+                <div x-data="{ open: false }" class="bg-white rounded-xl shadow-md transition-all">
+                    <button @click="open = !open"
+                        class="w-full flex items-start gap-4 p-6 text-left text-gray-800 font-medium text-base">
+                        <span class="text-[#25a4ad] text-3xl font-light leading-none" x-text="open ? '–' : '+'"></span>
+                        <span class="flex-1">
+                            And excellence partiality estimating terminated day everything?
+                        </span>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-14 pr-6 pb-6 text-gray-500 text-sm leading-relaxed">
+                        Discussed elsewhere mistaken indulgence unsatiable conviction. Suppose end get boy warrant
+                        general natural.
+                    </div>
+                </div>
+
+
+                <div x-data="{ open: false }" class="bg-white rounded-xl shadow-md transition-all">
+                    <button @click="open = !open"
+                        class="w-full flex items-start gap-4 p-6 text-left text-gray-800 font-medium text-base">
+                        <span class="text-[#25a4ad] text-3xl font-light leading-none" x-text="open ? '–' : '+'"></span>
+                        <span class="flex-1">
+                            Latter person am secure of estate genius at?
+                        </span>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-14 pr-6 pb-6 text-gray-500 text-sm leading-relaxed">
+                        Drawings offended yet answered Jennings perceive laughing six did far. Rooms oh fully taken by
+                        worse do.
+                    </div>
+                </div>
+
+
+                <div x-data="{ open: false }" class="bg-white rounded-xl shadow-md transition-all">
+                    <button @click="open = !open"
+                        class="w-full flex items-start gap-4 p-6 text-left text-gray-800 font-medium text-base">
+                        <span class="text-[#25a4ad] text-3xl font-light leading-none" x-text="open ? '–' : '+'"></span>
+                        <span class="flex-1">
+                            Whatever landlord yourself at by pleasure of children be?
+                        </span>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-14 pr-6 pb-6 text-gray-500 text-sm leading-relaxed">
+                        Secure shy favour length all twenty denote. He felicity no an at packages answered opinions
+                        juvenile.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA + Footer Section -->
+        <footer id="footer" class="bg-[#1f1f1f] text-white font-elms relative overflow-hidden">
+
+            <div class="relative text-center py-24 px-6">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-8">
+                    People who are <br class="md:hidden" /> ready took these courses!
+                </h2>
+                <button
+                    class="border border-gray-400 text-white px-8 py-2 rounded-md hover:bg-white hover:text-[#1f1f1f] transition-all duration-300">
+                    Schedule demo
+                </button>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="relative  py-12 px-6">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-3">Payme</h3>
+                        <p class="text-gray-400 text-sm">
+                            Crechterwoord K12 182 DK<br />
+                            Alknjkcb, All Rights Reserved
+                        </p>
+                    </div>
+
+
+                    <div>
+                        <h4 class="font-semibold mb-3">Links</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#" class="hover:text-white">Overons</a></li>
+                            <li><a href="#" class="hover:text-white">Social Media</a></li>
+                            <li><a href="#" class="hover:text-white">Counters</a></li>
+                            <li><a href="#" class="hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h4 class="font-semibold mb-3">Company</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+                            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-3">Get in touch</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>Crechterwoord K12</li>
+                            <li>182 DK Alknjkcb</li>
+                            <li>085-132567</li>
+                            <li>info@payme.net</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="text-center text-gray-500 text-xs mt-12">
+                    © 2021 Payme. All rights reserved
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+        <script src="app.js"></script>
+
+</body>
+
+</html>
